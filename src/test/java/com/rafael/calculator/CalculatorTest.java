@@ -1,15 +1,22 @@
 package com.rafael.calculator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+    private Calculator calculator;
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+    }
+
     @Test
     void devrait_renvoyer_additionner_les_deux_nombres() {
         // GIVEN
-        Calculator calculator = new Calculator();
         int opG = 2;
         int opD = 3;
 
@@ -23,7 +30,6 @@ class CalculatorTest {
     @Test
     void devrait_renvoyer_soustraire_les_deux_nombres() {
         // GIVEN
-        Calculator calculator = new Calculator();
         int opG = 2;
         int opD = -3;
 
@@ -37,7 +43,6 @@ class CalculatorTest {
     @Test
     void devrait_renvoyer_diviser_les_deux_nombres() {
         // GIVEN
-        Calculator calculator = new Calculator();
         int opG = 4;
         int opD = 2;
 
