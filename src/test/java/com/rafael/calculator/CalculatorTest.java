@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -46,5 +47,44 @@ class CalculatorTest {
 
         // THEN
         assertThat(res).isEqualTo(2);
+    }
+
+    @Test
+    void devrait_retourner_lensemble_unique_avec_un_cas_general() {
+        // GIVEN
+        int test = 464;
+        Set<Integer> expected = Set.of(4,6);
+
+        // WHEN
+        Set<Integer> res = Calculator.ensembleChiffres(test);
+
+        // THEN
+        assertThat(res).isEqualTo(expected);
+    }
+
+    @Test
+    void devrait_retourner_lensemble_zero_avec_zero() {
+        // GIVEN
+        int test = 0;
+        Set<Integer> expected = Set.of(0);
+
+        // WHEN
+        Set<Integer> res = Calculator.ensembleChiffres(test);
+
+        // THEN
+        assertThat(res).isEqualTo(expected);
+    }
+
+    @Test
+    void devrait_retourner_lensemble_unique_avec_un_nombre_negatif() {
+        // GIVEN
+        int test = -18;
+        Set<Integer> expected = Set.of(1,8);
+
+        // WHEN
+        Set<Integer> res = Calculator.ensembleChiffres(test);
+
+        // THEN
+        assertThat(res).isEqualTo(expected);
     }
 }
