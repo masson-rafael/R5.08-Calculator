@@ -7,12 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    private Calculator calculator;
-
-    @BeforeEach
-    void setUp() {
-        calculator = new Calculator();
-    }
 
     @Test
     void devrait_renvoyer_additionner_les_deux_nombres() {
@@ -21,7 +15,7 @@ class CalculatorTest {
         int opD = 3;
 
         // WHEN
-        int res = calculator.add(opG,opD);
+        int res = Calculator.add(opG,opD);
 
         // THEN
         assertThat(res).isEqualTo(5);
@@ -34,7 +28,7 @@ class CalculatorTest {
         int opD = -3;
 
         // WHEN
-        int res = calculator.add(opG,opD);
+        int res = Calculator.add(opG,opD);
 
         // THEN
         assertThat(res).isEqualTo(-1);
@@ -47,7 +41,7 @@ class CalculatorTest {
         int opD = 2;
 
         // WHEN
-        int res = calculator.divide(opG,opD);
+        int res = Calculator.divide(opG,opD);
 
         // THEN
         assertThat(res).isEqualTo(2);
